@@ -38,7 +38,7 @@
 			
 			a:hover /*ustawienia do linkow gdy trzymamy na nich myszke*/
 			{
-				color: white;
+				color: yellow;
 			}
 			#obramowanie /*glowny blok majacy za zadanie trzymanie strony w ryzach*/
 			{
@@ -78,7 +78,50 @@
 			
 			#kontakt_box a /*wygaszenie podkreslenia linka przy mailu znajdujacym sie w kontakt boxie */
 			{
-				border-bottom: 0px; 
+				border-bottom: none; 
+			}
+				
+			/*MENU GORNE - ROZWIJALNE */
+			
+			#gorne_menu
+			{
+				position:absolute;
+				left: 50px;
+				bottom: -1px;
+			}
+			
+			#lista_etykiety li /*dorzucenie li pozwolilo przerzucic linki z 1 nad drugim na od lewej do prawej*/
+			{
+				list-style-type: none;  /*brak bulletu*/
+				float: left; /*wyrzucenie list na lewa strone bloczka*/
+				border-right:1px solid #2E2121;
+				
+			}
+			
+			#lista_etykiety li a
+			{
+				background-image: url('images/srodek_menu_gornego.gif');  /*dodanie tła do list*/
+				height: 31px; /*wysokosc obrazka*/
+				display: inline-block; /* mozesz podac wysokosc i szerokosc elementu, beda rowniez obok siebie */
+				float: left; /* dla bezpieczenstwa ponowione???? */
+				border-bottom:none; /*usuniecie kropek z dolu... */
+				padding: 0px 10px;
+				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+				color:white;
+			}
+			
+			#lista_etykiety li a:hover,/*zmiana kamyczka menu gdy kursor na nim*/ #lista_etykiety li.current a /*zmiana wygladu 1szego kamyczka*/
+			{
+				background-image: url('images/srodek_menu_gornego_hover.gif'); /*zmiana obrazku bloczka gdy sie najedzie na niego kursorem */
+				color: #CCCCCC; /*zmiana koloru literek na taki szarawy*/
+			}
+			
+			span.links
+			{
+				display: inline-block;
+				margin-top:	10px; /*odstep mnenu 1 2 itd od gory bloczka*/
 			}
 											
 			/*]]>*/
@@ -89,6 +132,17 @@
 			<div id="obramowanie"> <!-- glowny blok strony aby nam sie nie rozjezdzala jak bedziemy zmniejszac okienko przegladarki -->
 				<div id="gorna_czesc_obramowania"> <!-- gorny banner tak kolokwialnie mowiac? -->
 					<a href="https://www.onet.pl" alt="krypto reklama onetu"><img class="logo" src="images/logo.gif"/></a>
+					<div id="gorne_menu"> <!-- menu tworzymy przy pomocy list -->
+						<ul id="lista_etykiety">
+							<li class="current" style="border-left: 1px solid black;"><!--dodanie czarnego fragmentu ramki z L w 1szym kamyczku--><a href="#"><span class="links"> Menu 1</span></a></li> <!-- # przeniesie na ta sama strone, wiec linki donikad -->
+							<li><a href="#"><span class="links"> Menu 2</span></a></li>
+							<li><a href="#"><span class="links"> Menu 3</span></a></li>
+							<li><a href="#"><span class="links"> Menu 4</span></a></li>
+							<li><a href="#"><span class="links"> Menu 5</span></a></li>
+							<li><a href="#"><span class="links"> Menu 6</span></a></li>
+						</ul>
+						
+					</div>
 						<div id="kontakt_box"> <!-- self explaining-->
 							<table>
 								<tr><th>Kontakt:</th></tr>
