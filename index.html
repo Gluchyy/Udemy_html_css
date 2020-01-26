@@ -13,25 +13,41 @@
 	  	
 		<style type="text/css">
 			/*<![CDATA[*/
+			
 			*
 			{
 				padding: 0px;
 				margin: 0px;				
 			}
-			body
+			
+			body /*tło*/
 			{
 				/*background: url('images/tlo_strony2.jpg') fixed;
 				background-repeat: repeat-x;
 				background-color: #64646c;        TLO POWTARZAJACE SIE Z MALUTKIEGO PASKA I ZAKONCZONE ODOPOWIEDNIM BACKGROUND COLOR*/
 				background: url('images/tlo_strony.jpg') fixed;   /*tlo z obrazka powtarzajace sie i bedace w tym samym miejscu przy scrollowaniu*/
 			}
-			#obramowanie
+			
+			a /*ogolne ustawienia do linkow na stronie */
+			{
+				color:teal;
+				text-decoration: none;
+				border-bottom: 1px dotted grey;
+				
+			}
+			
+			a:hover /*ustawienia do linkow gdy trzymamy na nich myszke*/
+			{
+				color: white;
+			}
+			#obramowanie /*glowny blok majacy za zadanie trzymanie strony w ryzach*/
 			{
 				width: 1004px; /*szerokosc strony dla rozdzialki 1024x768 --> 20px odjete na scrolla z prawej, ktory sie pozniej pojawi */
 				margin: 0 auto; /*gora i dol margines 0, a boki automatycznie maja centrowac -- to nie wystarczy na ultra stare browsery, potrzebny align="center"dodac w divie */ 
 			}
+			
 			/* GORNA CZESC OBRAMOWANIA*/
-			#gorna_czesc_obramowania
+			#gorna_czesc_obramowania /* gorny blok z logiem i kontaktami */
 			{
 				position:relative; /*do niego bedzie sie odnosilo to co jest w tym bloczku, u nas img.logo bedzie sie do niego odnosic, a nie do calej strony*/
 				background-image: url('images/gora_i_dol.gif');
@@ -40,12 +56,29 @@
 				margin-top: 10px;
 				
 			}
-			img.logo
+			
+			img.logo /*logo w gornym bloku */
 			{
 				position: absolute; /*stala pozycja w bloczku*/
 				border: 0;
 				left:20px; /*odstepy od krawedzi bloczka*/
 				top:20px;
+			}
+			
+			#kontakt_box /*tabela z kontaktami w gornym menu */
+			{
+				position: absolute;
+				right:40px;
+				top:7px;
+				color:white;
+				font-family: "Trebuchet MS", Helvetica, sans-serif;
+				font-size:14px;
+				line-height: 125%;
+			}
+			
+			#kontakt_box a /*wygaszenie podkreslenia linka przy mailu znajdujacym sie w kontakt boxie */
+			{
+				border-bottom: 0px; 
 			}
 											
 			/*]]>*/
@@ -53,10 +86,18 @@
 	</head>
 	<body>
 		<div align="center"> <!-- zabezpieczenie przed ultra starymi przegladarkami -->
-			<div id="obramowanie">
-				<div id="gorna_czesc_obramowania">
-					<a href="https://www.onet.pl"><img class="logo" src="images/logo.gif" /></a>
-					
+			<div id="obramowanie"> <!-- glowny blok strony aby nam sie nie rozjezdzala jak bedziemy zmniejszac okienko przegladarki -->
+				<div id="gorna_czesc_obramowania"> <!-- gorny banner tak kolokwialnie mowiac? -->
+					<a href="https://www.onet.pl" alt="krypto reklama onetu"><img class="logo" src="images/logo.gif"/></a>
+						<div id="kontakt_box"> <!-- self explaining-->
+							<table>
+								<tr><th>Kontakt:</th></tr>
+								<tr><td>Firma XYZ, 31-111, Kraków</td></tr>
+								<tr><td>ul. Bez nazwy 21</td></tr>
+								<tr><td>tel.: 555-555-333</td></tr>
+								<tr><td>e-mail: <a href="mailto: adres.email@gmail.com">adres.email@gmail.com</a></td></tr>	
+							</table>
+						</div> <!-- koniec kontakt boxa -->
 				</div><!-- koniec gorna_czesc_obramowania -->
 			</div> <!-- koniec obramowanie -->
 		</div> <!-- koniec centrowania obramowania -->
