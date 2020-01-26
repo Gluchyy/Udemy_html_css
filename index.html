@@ -13,6 +13,11 @@
 	  	
 		<style type="text/css">
 			/*<![CDATA[*/
+			*
+			{
+				padding: 0px;
+				margin: 0px;				
+			}
 			body
 			{
 				/*background: url('images/tlo_strony2.jpg') fixed;
@@ -20,13 +25,41 @@
 				background-color: #64646c;        TLO POWTARZAJACE SIE Z MALUTKIEGO PASKA I ZAKONCZONE ODOPOWIEDNIM BACKGROUND COLOR*/
 				background: url('images/tlo_strony.jpg') fixed;   /*tlo z obrazka powtarzajace sie i bedace w tym samym miejscu przy scrollowaniu*/
 			}
-												
+			#obramowanie
+			{
+				width: 1004px; /*szerokosc strony dla rozdzialki 1024x768 --> 20px odjete na scrolla z prawej, ktory sie pozniej pojawi */
+				margin: 0 auto; /*gora i dol margines 0, a boki automatycznie maja centrowac -- to nie wystarczy na ultra stare browsery, potrzebny align="center"dodac w divie */ 
+			}
+			/* GORNA CZESC OBRAMOWANIA*/
+			#gorna_czesc_obramowania
+			{
+				position:relative; /*do niego bedzie sie odnosilo to co jest w tym bloczku, u nas img.logo bedzie sie do niego odnosic, a nie do calej strony*/
+				background-image: url('images/gora_i_dol.gif');
+				width:944px; /*szerokosc i wysokosc obrazka*/
+				height:113px;
+				margin-top: 10px;
+				
+			}
+			img.logo
+			{
+				position: absolute; /*stala pozycja w bloczku*/
+				border: 0;
+				left:20px; /*odstepy od krawedzi bloczka*/
+				top:20px;
+			}
+											
 			/*]]>*/
 		</style>
 	</head>
 	<body>
-		
-	
+		<div align="center"> <!-- zabezpieczenie przed ultra starymi przegladarkami -->
+			<div id="obramowanie">
+				<div id="gorna_czesc_obramowania">
+					<a href="https://www.onet.pl"><img class="logo" src="images/logo.gif" /></a>
+					
+				</div><!-- koniec gorna_czesc_obramowania -->
+			</div> <!-- koniec obramowanie -->
+		</div> <!-- koniec centrowania obramowania -->
 		
 	</body>
 </html>
