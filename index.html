@@ -40,14 +40,14 @@
 			{
 				color: yellow;
 			}
-			#obramowanie /*glowny blok majacy za zadanie trzymanie strony w ryzach*/
+			#container /*glowny blok majacy za zadanie trzymanie strony w ryzach*/
 			{
 				width: 1004px; /*szerokosc strony dla rozdzialki 1024x768 --> 20px odjete na scrolla z prawej, ktory sie pozniej pojawi */
 				margin: 0 auto; /*gora i dol margines 0, a boki automatycznie maja centrowac -- to nie wystarczy na ultra stare browsery, potrzebny align="center"dodac w divie */ 
 			}
 			
 			/* GORNA CZESC OBRAMOWANIA*/
-			#gorna_czesc_obramowania /* gorny blok z logiem i kontaktami */
+			#upper_container /* gorny blok z logiem i kontaktami */
 			{
 				position:relative; /*do niego bedzie sie odnosilo to co jest w tym bloczku, u nas img.logo bedzie sie do niego odnosic, a nie do calej strony*/
 				background-image: url('images/gora_i_dol.gif');
@@ -118,28 +118,76 @@
 				color: #CCCCCC; /*zmiana koloru literek na taki szarawy*/
 			}
 			
-			span.links
+			span.link
 			{
 				display: inline-block;
 				margin-top:	10px; /*odstep mnenu 1 2 itd od gory bloczka*/
 			}
-											
+			
+			/*ŚRODKOWE MENU */
+			
+			#srodkowe_menu
+			{
+				background-image: url('images/srodkowe_menu.gif');
+				width: 944px;
+				height: 32px;
+			}
+			
+			#srodkowe_menu li
+			{
+				
+				list-style-type: none; /*wywalenie bulletow*/
+				float: left; /*przerzucenie opcji na lewo*/
+			}
+				
+				#srodkowe_menu li a
+			{
+				border-bottom: none; /*brak kropek na dole*/
+				color: white; /*kolor tekstu bialy*/
+				font-size: 13px;
+				font-family: "Trebuchet MS", Helvetica, sans-serif;
+				font-weight: bold;
+				font-style: italic;				
+			}		
+			
+			#srodkowe_menu li a:hover
+			{
+				color: red /*czerwony po najechaniu*/			
+			}				
+					
+			#srodkowe_menu li span.link2
+			{
+				display: block;	/*czemu tutaj nie bylo diva tylko span? skoro na block zmieniasz? */
+				margin-top: 7px; /*odsuniecie menu pierwszy poziom od gory */
+			}				
+			
+			#srodkowe_menu #pierwszy_poziom
+			{
+				margin-left: 70px;
+			}
+			
+			#srodkowe_menu span.odstep
+			{
+				display: inline-block; /*bez tego nie ustawie marginesow dla tych "odstepow"*/
+				margin: 5px 10px 0px 10px;
+				color: white;
+			}
 			/*]]>*/
 		</style>
 	</head>
 	<body>
 		<div align="center"> <!-- zabezpieczenie przed ultra starymi przegladarkami -->
-			<div id="obramowanie"> <!-- glowny blok strony aby nam sie nie rozjezdzala jak bedziemy zmniejszac okienko przegladarki -->
-				<div id="gorna_czesc_obramowania"> <!-- gorny banner tak kolokwialnie mowiac? -->
+			<div id="container"> <!-- glowny blok strony aby nam sie nie rozjezdzala jak bedziemy zmniejszac okienko przegladarki -->
+				<div id="upper_container"> <!-- gorny banner tak kolokwialnie mowiac? -->
 					<a href="https://www.onet.pl" alt="krypto reklama onetu"><img class="logo" src="images/logo.gif"/></a>
 					<div id="gorne_menu"> <!-- menu tworzymy przy pomocy list -->
 						<ul id="lista_etykiety">
-							<li class="current" style="border-left: 1px solid black;"><!--dodanie czarnego fragmentu ramki z L w 1szym kamyczku--><a href="#"><span class="links"> Menu 1</span></a></li> <!-- # przeniesie na ta sama strone, wiec linki donikad -->
-							<li><a href="#"><span class="links"> Menu 2</span></a></li>
-							<li><a href="#"><span class="links"> Menu 3</span></a></li>
-							<li><a href="#"><span class="links"> Menu 4</span></a></li>
-							<li><a href="#"><span class="links"> Menu 5</span></a></li>
-							<li><a href="#"><span class="links"> Menu 6</span></a></li>
+							<li class="current" style="border-left: 1px solid black;"><!--dodanie czarnego fragmentu ramki z L w 1szym kamyczku--><a href="#"><span class="link"> Menu 1</span></a></li> <!-- # przeniesie na ta sama strone, wiec linki donikad -->
+							<li><a href="#"><span class="link"> Menu 2</span></a></li>
+							<li><a href="#"><span class="link"> Menu 3</span></a></li>
+							<li><a href="#"><span class="link"> Menu 4</span></a></li>
+							<li><a href="#"><span class="link"> Menu 5</span></a></li>
+							<li><a href="#"><span class="link"> Menu 6</span></a></li>
 						</ul>
 						
 					</div>
@@ -152,9 +200,22 @@
 								<tr><td>e-mail: <a href="mailto: adres.email@gmail.com">adres.email@gmail.com</a></td></tr>	
 							</table>
 						</div> <!-- koniec kontakt boxa -->
-				</div><!-- koniec gorna_czesc_obramowania -->
-			</div> <!-- koniec obramowanie -->
-		</div> <!-- koniec centrowania obramowania -->
+				</div><!-- koniec upper_container -->
+				<div id="srodkowe_menu">
+					<ul id="pierwszy_poziom">
+							<li><a href="#"><span class="link2"> Rozwijane 1</span></a></li> <!-- # przeniesie na ta sama strone, wiec linki donikad -->
+							<li><span class="odstep">---</span>"</li> <!-- odstępy między rozwijanymi menu-->
+							<li><a href="#"><span class="link2"> Rozwijane 2</span></a></li>
+							<li><span class="odstep">---</span>"</li>
+							<li><a href="#"><span class="link2"> Rozwijane 3</span></a></li>
+							<li><span class="odstep">---</span>"</li>
+							<li><a href="#"><span class="link2"> Rozwijane 4</span></a></li>
+							
+					</ul>
+				</div><!-- koniec srodkowe_menu-->
+				
+			</div> <!-- koniec container-->
+		</div> <!-- koniec centrowania containera -->
 		
 	</body>
 </html>
