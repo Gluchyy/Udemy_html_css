@@ -93,7 +93,7 @@
 			#lista_etykiety li /*dorzucenie li pozwolilo przerzucic linki z 1 nad drugim na od lewej do prawej*/
 			{
 				list-style-type: none;  /*brak bulletu*/
-				float: left; /*wyrzucenie list na lewa strone bloczka*/
+				float: left; /*wyrzucenie list na lewa strone bloczka, bez tego nie bedzie dzialal tez ponizszy border na 1 px.. */
 				border-right:1px solid #2E2121;
 				
 			}
@@ -103,7 +103,7 @@
 				background-image: url('images/srodek_menu_gornego.gif');  /*dodanie tła do list*/
 				height: 31px; /*wysokosc obrazka*/
 				display: inline-block; /* mozesz podac wysokosc i szerokosc elementu, beda rowniez obok siebie */
-				float: left; /* dla bezpieczenstwa ponowione???? */
+				float: left; /* dla bezpieczenstwa ponowione???? bo niby z lista_etykiety li powinna sie nalozyc */
 				border-bottom:none; /*usuniecie kropek z dolu... */
 				padding: 0px 10px;
 				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
@@ -121,7 +121,7 @@
 			span.link
 			{
 				display: inline-block;
-				margin-top:	10px; /*odstep mnenu 1 2 itd od gory bloczka*/
+				margin-top:	10px; /*odstep tekstu menu 1 2 itd od gory bloczka*/
 			}
 			
 			/*ŚRODKOWE MENU */
@@ -157,19 +157,19 @@
 					
 			#srodkowe_menu li span.link2
 			{
-				display: block;	/*czemu tutaj nie bylo diva tylko span? skoro na block zmieniasz? */
-				margin-top: 7px; /*odsuniecie menu pierwszy poziom od gory */
+				display: block;	/*bez blocka nie moglbym ustawic gornego marginesu. Chyba inline-block tez moze byc*/
+				margin-top: 7px; /*odsuniecie menu "Rozwijane" pierwszy poziom od gory */
 			}				
 			
 			#srodkowe_menu #pierwszy_poziom
 			{
-				margin-left: 70px;
+				margin-left: 60px;
 			}
 			
 			#srodkowe_menu span.odstep
 			{
-				display: inline-block; /*bez tego nie ustawie marginesow dla tych "odstepow"*/
-				margin: 5px 10px 0px 10px;
+				display: inline-block; /*inline block -> mozesz nadac wymiary elementowi, wszystkie marginesy i takze nie nastapi po nim przejscie do kolejne linii. */
+				margin: 5px 10px 0px 10px; /*odstepy w odpowiednich kierunkach od "odstepow"--- */
 				color: white;
 			}
 			
@@ -215,8 +215,8 @@
 				border-left: 4px solid gray;
 				border-bottom: 1px solid gray;
 				border-right: 1px solid gray;
-				opacity:0.9; /*lekka przezroczystosc*/
-				filter: alpha(opacity=90);
+				opacity:0.9; /*lekka przezroczystosc 10%*/
+				filter: alpha(opacity=90); /*dla IE 6*/
 			}
 			
 			#pierwszy_poziom li .drugi_poziom li /*zmiana wygladu list z opcjami */
@@ -228,7 +228,7 @@
 			{
 				display: block; /*na całą szerokość*/
 				width: 100px; /*podswietlana szerokosc, patrz nizej*/
-				margin-bottom:5px;
+				margin-bottom:5px; /*odsuniecie miedzy kolejnymi opcjami*/
 				padding-bottom:5px;  /*wypelnienie od dolu aby bloczek powiekszyc*/
 			}
 			
@@ -238,15 +238,15 @@
 				background-color: #CCCCCC;
 				padding-left:20px; /*bloczek przesunal w prawo, wiec trzeba "cofnac" margines o ta sama wartosc - wtedy sie wysrodkuje */
 				margin-left:-20px;
-				padding-right:20px;
-				margin-top:-1px; /*zakrycie border top 1px solid gray z wczesniej bo bloczek go nie zakrywal*/
+				padding-right:20px; /*z prawej nie trzeba nic odejmowac bo align do lewej byl wiec sie dostosowal*/
+				margin-top:-1px; /*zakrycie border top 1px solid gray z wczesniej bo bloczek go nie zakrywal przy hoverze*/
 				border-top:1px solid gray; /*bez tego by caly czas lista skakala o ten 1 px... */
-				color:black;
+				color:black; /*kolor czcionki przy hoverze*/
 			}
 			
 			#pierwszy_poziom li .drugi_poziom li a /* zmiana wygladu czcionki */
 			{
-				font: normal bold 10px Verdana, Geneva, Arial, Helvetica, sans-serif;
+				font: normal bold 10px Verdana, Geneva, Arial, Helvetica, sans-serif; /*wazna kolejnosc przy pisaniu skrotem*/
 			}
 			
 			#pierwszy_poziom li .drugi_poziom li.pierwszy_element_menu /*odsuniecie troszke listy od gory*/
@@ -260,11 +260,11 @@
 		<div align="center"> <!-- zabezpieczenie przed ultra starymi przegladarkami -->
 			<div id="container"> <!-- glowny blok strony aby nam sie nie rozjezdzala jak bedziemy zmniejszac okienko przegladarki -->
 				<div id="upper_container"> <!-- gorny banner tak kolokwialnie mowiac? -->
-					<a href="https://www.onet.pl" alt="krypto reklama onetu"><img class="logo" src="images/logo.gif"/></a>
+					<a href="file:///C:/Repozytorium/Udemy_html_css/index.html" alt="Main page"><img class="logo" src="images/logo.gif"/></a> <!-- tutaj ma byc normalny link do glownej strony jak bedzie na serwerze-->
 					<div id="gorne_menu"> <!-- menu tworzymy przy pomocy list -->
 						<ul id="lista_etykiety">
 							<li class="current" style="border-left: 1px solid black;"><!--dodanie czarnego fragmentu ramki z L w 1szym kamyczku--><a href="#"><span class="link"> Menu 1</span></a></li> <!-- # przeniesie na ta sama strone, wiec linki donikad -->
-							<li><a href="#"><span class="link">Menu 2</span></a></li>
+							<li><a href="#"><span class="link">Menu 2</span></a></li> <!--spany bo chcesz je miec wypisane obok siebie-->
 							<li><a href="#"><span class="link">Menu 3</span></a></li>
 							<li><a href="#"><span class="link">Menu 4</span></a></li>
 							<li><a href="#"><span class="link">Menu 5</span></a></li>
@@ -284,7 +284,7 @@
 				</div><!-- koniec upper_container -->
 				<div id="srodkowe_menu">
 					<ul id="pierwszy_poziom">
-							<li><a href="#"><span class="link2"> Rozwijane 1</span></a>
+							<li><a href="#"><span class="link2"> Rozwijane 1</span></a> <!-- span bo rozwijane 1, rozwijane 2 itd chcesz miec obok siebie-->
 								<ul class="drugi_poziom">
 									<li class="pierwszy_element_menu"><a href="#">L 1 O 1</a></li>
 									<li><a href="#">L 1 O 2</a></li>
