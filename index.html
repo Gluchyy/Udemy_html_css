@@ -172,6 +172,87 @@
 				margin: 5px 10px 0px 10px;
 				color: white;
 			}
+			
+			/*ROZWIJANE MENU*/
+			
+			#pierwszy_poziom li .drugi_poziom /* wygaszenie widocznosci rozwinietego menu */
+			{
+				display: none;
+			}
+			
+			#pierwszy_poziom li:hover   .drugi_poziom /* wlaczenie widocznosci przy hover nad headerem rozwijanego menu*/
+			{				
+				display: block;
+				width: 160px; /*szeroksoc rozwinietych bloczkow*/
+			}
+			
+			#pierwszy_poziom li .drugi_poziom li /*ustawienie do lewej tekstu rozwijanych bloczkow*/
+			{
+				width:100px; /*szeroksoc bloczka z tekstem*/
+				text-align: left;
+			}
+			
+			#pierwszy_poziom li
+			{
+				position:relative; /*rozwijane bloczki z drugiego poziomu bedziemy zaraz pozycjonowac wzgledem headerow rozwijanych (pierwszy poziom) dlatego tutaj relative*/
+			}
+			
+			#pierwszy_poziom li .drugi_poziom
+			{
+				position:absolute; /*pozycjonujemy drugi poziom wzgledem pierwszego poziomu*/
+				top:1.92em;
+				left: 0em;  /* po co?? */
+			}
+			
+			#pierwszy_poziom > li /*bedzie lapac kursor rozwijanie na wiekszym dystansie od dolu tyczy sie tylko do bezposrednich dzieci do pierwszy poziom*/
+			{
+				height: 32px;
+			}
+			
+			#pierwszy_poziom li .drugi_poziom /*to sie powtarza ciagle, mozna to zlozyc pozniej w jedno ale tutaj masz tok rozumowania pokazany*/
+			{
+				background-color: #0F3250;  /*tło rozwinietych opcji*/
+				border-left: 4px solid gray;
+				border-bottom: 1px solid gray;
+				border-right: 1px solid gray;
+				opacity:0.9; /*lekka przezroczystosc*/
+				filter: alpha(opacity=90);
+			}
+			
+			#pierwszy_poziom li .drugi_poziom li /*zmiana wygladu list z opcjami */
+			{
+				margin-left: 30px;
+				border-top: 1px solid #CCCCCC;
+			}
+			#pierwszy_poziom li .drugi_poziom li a /* tworzenie odstepow miedzy kolejnymi opcjami w rozwijanej liscie */
+			{
+				display: block; /*na całą szerokość*/
+				width: 100px; /*podswietlana szerokosc, patrz nizej*/
+				margin-bottom:5px;
+				padding-bottom:5px;  /*wypelnienie od dolu aby bloczek powiekszyc*/
+			}
+			
+			#pierwszy_poziom li .drugi_poziom li a:hover /*ustawianie koloru tla przy hoverze oraz szerokosci bloczka
+			 aby mozna bylo kliknac tez myszka obok tekstu (czyli glownej szerokosci bloczka na tekst)*/
+			{
+				background-color: #CCCCCC;
+				padding-left:20px; /*bloczek przesunal w prawo, wiec trzeba "cofnac" margines o ta sama wartosc - wtedy sie wysrodkuje */
+				margin-left:-20px;
+				padding-right:20px;
+				margin-top:-1px; /*zakrycie border top 1px solid gray z wczesniej bo bloczek go nie zakrywal*/
+				border-top:1px solid gray; /*bez tego by caly czas lista skakala o ten 1 px... */
+				color:black;
+			}
+			
+			#pierwszy_poziom li .drugi_poziom li a /* zmiana wygladu czcionki */
+			{
+				font: normal bold 10px Verdana, Geneva, Arial, Helvetica, sans-serif;
+			}
+			
+			#pierwszy_poziom li .drugi_poziom li.pierwszy_element_menu /*odsuniecie troszke listy od gory*/
+			{
+				margin-top: 5px;
+			}
 			/*]]>*/
 		</style>
 	</head>
@@ -183,11 +264,11 @@
 					<div id="gorne_menu"> <!-- menu tworzymy przy pomocy list -->
 						<ul id="lista_etykiety">
 							<li class="current" style="border-left: 1px solid black;"><!--dodanie czarnego fragmentu ramki z L w 1szym kamyczku--><a href="#"><span class="link"> Menu 1</span></a></li> <!-- # przeniesie na ta sama strone, wiec linki donikad -->
-							<li><a href="#"><span class="link"> Menu 2</span></a></li>
-							<li><a href="#"><span class="link"> Menu 3</span></a></li>
-							<li><a href="#"><span class="link"> Menu 4</span></a></li>
-							<li><a href="#"><span class="link"> Menu 5</span></a></li>
-							<li><a href="#"><span class="link"> Menu 6</span></a></li>
+							<li><a href="#"><span class="link">Menu 2</span></a></li>
+							<li><a href="#"><span class="link">Menu 3</span></a></li>
+							<li><a href="#"><span class="link">Menu 4</span></a></li>
+							<li><a href="#"><span class="link">Menu 5</span></a></li>
+							<li><a href="#"><span class="link">Menu 6</span></a></li>
 						</ul>
 						
 					</div>
@@ -203,13 +284,46 @@
 				</div><!-- koniec upper_container -->
 				<div id="srodkowe_menu">
 					<ul id="pierwszy_poziom">
-							<li><a href="#"><span class="link2"> Rozwijane 1</span></a></li> <!-- # przeniesie na ta sama strone, wiec linki donikad -->
+							<li><a href="#"><span class="link2"> Rozwijane 1</span></a>
+								<ul class="drugi_poziom">
+									<li class="pierwszy_element_menu"><a href="#">L 1 O 1</a></li>
+									<li><a href="#">L 1 O 2</a></li>
+									<li><a href="#">Lista 1 Opcja 3</a></li>
+									<li><a href="#">Lista 1 Opcja 4</a></li>
+									<li><a href="#">Lista 1 Opcja 5</a></li>
+									<li><a href="#">Lista 1 Opcja 6</a></li>
+								</ul>					
+							</li> <!-- # przeniesie na ta sama strone, wiec linki donikad -->
 							<li><span class="odstep">---</span>"</li> <!-- odstępy między rozwijanymi menu-->
-							<li><a href="#"><span class="link2"> Rozwijane 2</span></a></li>
+							<li><a href="#"><span class="link2"> Rozwijane 2</span></a>
+								<ul class="drugi_poziom">
+									<li class="pierwszy_element_menu"><a href="#">L 2 O 1</a></li>
+									<li><a href="#">L 2 O 2</a></li>
+									<li><a href="#">Lista 2 Opcja 3</a></li>
+									<li><a href="#">Lista 2 Opcja 4</a></li>
+									<li><a href="#">Lista 2 Opcja 5</a></li>
+									<li><a href="#">Lista 2 Opcja 6</a></li>
+								</ul>
+							</li>
 							<li><span class="odstep">---</span>"</li>
-							<li><a href="#"><span class="link2"> Rozwijane 3</span></a></li>
+							<li><a href="#"><span class="link2"> Rozwijane 3</span></a>
+								<ul class="drugi_poziom">
+									<li class="pierwszy_element_menu"><a href="#">L 3 O 1</a></li>
+									<li><a href="#">L 3 O 2</a></li>
+									<li><a href="#">Lista 3 Opcja 3</a></li>
+									<li><a href="#">Lista 3 Opcja 4</a></li>
+									<li><a href="#">Lista 3 Opcja 5</a></li>
+									<li><a href="#">Lista 3 Opcja 6</a></li>
+								</ul>
+							</li>
 							<li><span class="odstep">---</span>"</li>
-							<li><a href="#"><span class="link2"> Rozwijane 4</span></a></li>
+							<li><a href="#"><span class="link2"> Rozwijane 4</span></a>
+								<ul class="drugi_poziom" style="width: 80px;">
+									<li class="pierwszy_element_menu" style="width: 20px;"><a href="#"style="width: 20px;">.</a></li>
+									<li style="width: 20px;"><a href="#"style="width: 20px;">,</a></li>
+									<li style="width: 20px;"><a href="#"style="width: 20px;">!</a></li>
+								</ul>
+							</li>
 							
 					</ul>
 				</div><!-- koniec srodkowe_menu-->
