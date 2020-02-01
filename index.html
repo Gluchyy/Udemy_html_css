@@ -350,6 +350,83 @@
 				opacity: 0.6;
 				filter: alpha(opacity=60); 
 			}
+			
+			#dolna_czesc_strony
+			{
+				background-image: url('images/gora_i_dol.gif');
+				width:944px; /*szerokosc i wysokosc obrazka, 944px podobno dobrze wyglada na 1280 i 1024 px szerokosciach*/
+				height:113px;
+				margin-bottom: 10px;
+			}
+			
+			/*DOLNA CZESC STRONY - STOPKA*/
+			
+			#newsletter_icon
+			{
+				float:left;
+				margin-left: 20px;
+			}
+			
+			#tekst_newsletter
+			{
+				color: white;
+				text-align: left;
+				padding-top: 15px;
+			}
+			
+			#naglowek_newsletter
+			{
+				font-size: 15px;
+				font-family: "Comic Sans MS", cursive, sans-serif;
+				font-weight: bold;
+			}
+			
+			#form_newsletter
+			{
+				margin-top: 10px;
+				font-size: 12px;
+			}
+			
+			.input_text /*zmiana tła okienka do wpisywania i wielkości czcionki */
+			{
+				background-color: gray;
+				font-size: 12px;
+			}
+			
+			.submit_button
+			{
+				padding: 5px; /*powiekszamy przycisk*/
+				font-size: 10px;
+				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+				font-weight: bold;
+				cursor: pointer;
+				border: 2px outset gray; /*taka ramka 3D w ksztalcie piramidy od gory*/
+			}
+			
+			.submit_button:hover
+			{
+				color:green;
+			}
+			
+			.submit_button:active
+			{
+				border: 2px inset gray; /*odbicie outseta, w sensie cienie sie zmieniaja na przeciwlegle strony*/
+			}
+			
+			#newsletter_info /*edycja tekstu informacyjnego */
+			{
+				font-size: 10px;
+				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+				margin: 4px 0px 0px 25px;
+			}
+			
+			#copyright
+			{
+				font-size: 10px;
+				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+				margin-bottom: 10px;
+				color: white;
+			}
 			/*]]>*/
 		</style>
 	</head>
@@ -435,93 +512,117 @@
 							<p>Możesz także <b>za darmo</b> oglądnąć <a href="#">przykładowe lekcje</a>. </p>
 						</div>
 						<div class="obrazki">
-							<img src="images/video-kurs-c.gif" alt="Video Kurs" title="video-kurs"
+							<img src="images/video-kurs-c.gif" alt="Video Kurs C++" title="Video Kurs C++"
 							onmouseover="this.style.opacity=1; this.filters.alpha.opacity=100" 
 							onmouseout="this.style.opacity=0.6; this.filters.aplha.opacity=60"/>
-							<img src="images/video-kurs-xhtml-i-css.gif" alt="Video Kurs" title="video-kurs" 
+							<img src="images/video-kurs-xhtml-i-css.gif" alt="Video Kurs XHTML i CSS" title="Video Kurs XHTML i CSS" 
 							onmouseover="this.style.opacity=1; this.filters.alpha.opacity=100" 
 							onmouseout="this.style.opacity=0.6; this.filters.aplha.opacity=60"/>
 						</div>
 						<div id="tekst"><!-- Div do przechowywania tresci na naszej stronie-->
 							<h1>Video Kursy - Strona Główna</h1>
 
-<p>Witam Cię serdecznie,</p>
-
-<p>Znajdujesz się na stronie <strong>Wydawnictwa GEM</strong>. Zajmujemy się tworzeniem i sprzedażą <strong>Video Kursów</strong>.</p>
-
-<p>Zapraszamy Cię do <a href="#">artykułu</a>, w którym dowiesz się czym są <a href="#">Video Kursy?</a></p>
-
-<p>Możesz za darmo oglądać przykładowe lekcje <a href="#">tutaj</a> lub też na naszym kanale <a href="#">YouTube</a>.</p>
-
-<p>Stworzyliśmy dla Ciebie wysokiej jakości:</p>
-<h3>Kursy Programowania:</h3>
-<ul>
-	<li><a href="#"> Video Kurs Programowania w C++ - Wydanie 2 - </a><b>HIT</b></li>
-	<li><a href="#"> Video Kurs Programowania w C++ - Obsługa Plików</a></li>
-	<li><a href="#"> Video Kurs Programowania w C++ - Algorytmy</a></li>
-	<li><a href="#"> Video Kurs C# 4.0 NET 4.0 - HIT</a></li>
-	<li><a href="#"> Video Kurs C# Tworzenie Aplikacji - Nowość - HIT</a></li>
-	<li><a href="#"> Video Kurs Programowania w języku Java</a></li>
-	<li><a href="#"> Video Kurs Java - Tworzenie Aplikacji - HIT</a></li>
-	<li><a href="#"> Video Kurs Java - Strumienie</a></li>
-	<li><a href="#">  Video Kurs Java - Aspekty Zaawansowane</a></li>
-	<li><a href="#"> Video Kurs Programowania w języku Pascal (podstawy)</a></li>
-	<li><a href="#"> Selenium</a></li>
-	<li><a href="#"> Appium - Automatyzacja Testów Mobilnych - Nowość - </a><b>HIT</b></li>
-	<li><a href="#"> Auto IT</a></li>
-</ul>
-<h3>Kursy Tworzenia Stron WWW:</h3>
-<ul>
-	<li><a href="#">Video Kurs Tworzenia Stron WWW w (X)HTML &amp; CSS</a></li>
-	<li><a href="#"> Video Kurs PHP 5.3 wydanie 2 - Nowość</a></li>
-	<li><a href="#">Video Kurs MySQL w PHP - PhPMyAdmin - wydanie 2 - HIT</a></li>
-	<li><a href="#"> Video Kurs Zaawansowane Aspekty MySQL + MySQLi</a></li>
-	<li><a href="#"> Video Kurs PDO</a></li>
-    <li><a href="#">Video Kurs Pozycjonowania Stron Internetowych (SEO) - HIT</a></li>
-    <li><a href="#">Video Kurs SMARTY</a></li>
-    <li><a href="#">Video Kurs Java Script, DHTML</a></li>
-    <li><a href="#">Video Kurs AJAX - Dynamiczne Tworzenie Stron WWW</a></li>
-    <li><a href="#">Video Kurs jQuery - biblioteka JavaScript</a></li>
-    <li><a href="#">Video Kurs HTML 5 - HIT!</a></li>
-    <li><a href="#">Video Kurs CSS 3 - Nowość! HIT!</a></li>
-    <li><a href="#">Video Kurs SASS</a></li>
-    <li><a href="#">Video Kurs Compass</a></li>
-    <li><a href="#">Video Kurs Grunt.js - Nowość!</a></li>
-    <li><a href="#">Video Kurs XML i DTD</a></li>
-</ul>
-<h3>Kursy Matematyczne:</h3>
-<ul>
-    <li><a href="#">Video Kurs Matematyki: Logika i Zbiory - promocja - 7 zł wersja (online)!</a></li>
-    <li><a href="#">Video Kurs Matematyki: Algebra Cz. 1</a></li>
-    <li><a href="#">Video Kurs Matematyki: Algebra Cz. 2</a></li>
-</ul>
-<h3>Kursy Office:</h3>
-<ul>
-    <li><a href="#">Access 2010</a></li>
-    <li><a href="#">Excel 2010</a></li>
-    <li><a href="#">Excel 2013</a></li>
-    <li><a href="#">Visio 2010</a></li>
-    <li><a href="#">PowerPoint 2010</a></li>
-    <li><a href="#">Word 2010</a></li>
-</ul>
-<h3>Inne:</h3>
-<ul>
-    <li><a href="#">Zarządzanie Projektami</a></li>
-    <li><a href="#">Kierowniczo-Managerski</a></li>
-</ul>
-<p>Autorem prawie wszystkich wyżej wymienionych kursów jest <strong>Arkadiusz Włodarczyk</strong> - młody człowiek, przez co język używany w kursach jest dla każdego bardzo przystępny. Każdy kurs jest stworzony z myślą o Tobie, tak abyś nie tracił swojego cennego czasu. Gwarantujemy Ci szybkie rezultaty. Wszystkie informacje przekazywane są w prosty sposób. Nic nie jest pomijane. Po kursach będziesz potrafił realnie wcielić nowo poznane wiadomości w swoje życie.</p>
-
-<p>Jeżeli chcesz zakupić kurs to zapraszamy do <a href="#">Sklepu</a>.</p>
-
-<p>Zapraszamy serdecznie na <a href="#">forum</a>, czekamy na Twoje sugestie oraz pytania :)</p>
-
-<p>W razie jakichkolwiek pytań pisz śmiało na nasz <a href="mailto:aoczkowicz@gmail.com"> e-mail </a>, gg lub też <a href="#">forum</a>, postaramy się na nie odpowiedzieć w jak najkrótszym okresie czasu.</p>
+							<p>Witam Cię serdecznie,</p>
 							
+							<p>Znajdujesz się na stronie <strong>Wydawnictwa GEM</strong>. Zajmujemy się tworzeniem i sprzedażą <strong>Video Kursów</strong>.</p>
+							
+							<p>Zapraszamy Cię do <a href="#">artykułu</a>, w którym dowiesz się czym są <a href="#">Video Kursy?</a></p>
+							
+							<p>Możesz za darmo oglądać przykładowe lekcje <a href="#">tutaj</a> lub też na naszym kanale <a href="#">YouTube</a>.</p>
+							
+							<p>Stworzyliśmy dla Ciebie wysokiej jakości:</p>
+							<h3>Kursy Programowania:</h3>
+							<ul>
+								<li><a href="#"> Video Kurs Programowania w C++ - Wydanie 2 - </a><b>HIT</b></li>
+								<li><a href="#"> Video Kurs Programowania w C++ - Obsługa Plików</a></li>
+								<li><a href="#"> Video Kurs Programowania w C++ - Algorytmy</a></li>
+								<li><a href="#"> Video Kurs C# 4.0 NET 4.0 - HIT</a></li>
+								<li><a href="#"> Video Kurs C# Tworzenie Aplikacji - Nowość - HIT</a></li>
+								<li><a href="#"> Video Kurs Programowania w języku Java</a></li>
+								<li><a href="#"> Video Kurs Java - Tworzenie Aplikacji - HIT</a></li>
+								<li><a href="#"> Video Kurs Java - Strumienie</a></li>
+								<li><a href="#">  Video Kurs Java - Aspekty Zaawansowane</a></li>
+								<li><a href="#"> Video Kurs Programowania w języku Pascal (podstawy)</a></li>
+								<li><a href="#"> Selenium</a></li>
+								<li><a href="#"> Appium - Automatyzacja Testów Mobilnych - Nowość - </a><b>HIT</b></li>
+								<li><a href="#"> Auto IT</a></li>
+							</ul>
+							<h3>Kursy Tworzenia Stron WWW:</h3>
+							<ul>
+								<li><a href="#">Video Kurs Tworzenia Stron WWW w (X)HTML &amp; CSS</a></li>
+								<li><a href="#"> Video Kurs PHP 5.3 wydanie 2 - Nowość</a></li>
+								<li><a href="#">Video Kurs MySQL w PHP - PhPMyAdmin - wydanie 2 - HIT</a></li>
+								<li><a href="#"> Video Kurs Zaawansowane Aspekty MySQL + MySQLi</a></li>
+								<li><a href="#"> Video Kurs PDO</a></li>
+							    <li><a href="#">Video Kurs Pozycjonowania Stron Internetowych (SEO) - HIT</a></li>
+							    <li><a href="#">Video Kurs SMARTY</a></li>
+							    <li><a href="#">Video Kurs Java Script, DHTML</a></li>
+							    <li><a href="#">Video Kurs AJAX - Dynamiczne Tworzenie Stron WWW</a></li>
+							    <li><a href="#">Video Kurs jQuery - biblioteka JavaScript</a></li>
+							    <li><a href="#">Video Kurs HTML 5 - HIT!</a></li>
+							    <li><a href="#">Video Kurs CSS 3 - Nowość! HIT!</a></li>
+							    <li><a href="#">Video Kurs SASS</a></li>
+							    <li><a href="#">Video Kurs Compass</a></li>
+							    <li><a href="#">Video Kurs Grunt.js - Nowość!</a></li>
+							    <li><a href="#">Video Kurs XML i DTD</a></li>
+							</ul>
+							<h3>Kursy Matematyczne:</h3>
+							<ul>
+							    <li><a href="#">Video Kurs Matematyki: Logika i Zbiory - promocja - 7 zł wersja (online)!</a></li>
+							    <li><a href="#">Video Kurs Matematyki: Algebra Cz. 1</a></li>
+							    <li><a href="#">Video Kurs Matematyki: Algebra Cz. 2</a></li>
+							</ul>
+							<h3>Kursy Office:</h3>
+							<ul>
+							    <li><a href="#">Access 2010</a></li>
+							    <li><a href="#">Excel 2010</a></li>
+							    <li><a href="#">Excel 2013</a></li>
+							    <li><a href="#">Visio 2010</a></li>
+							    <li><a href="#">PowerPoint 2010</a></li>
+							    <li><a href="#">Word 2010</a></li>
+							</ul>
+							<h3>Inne:</h3>
+							<ul>
+							    <li><a href="#">Zarządzanie Projektami</a></li>
+							    <li><a href="#">Kierowniczo-Managerski</a></li>
+							</ul>
+							<p>Autorem prawie wszystkich wyżej wymienionych kursów jest <strong>Arkadiusz Włodarczyk</strong> - młody człowiek, przez co język używany w kursach jest dla każdego bardzo przystępny. Każdy kurs jest stworzony z myślą o Tobie, tak abyś nie tracił swojego cennego czasu. Gwarantujemy Ci szybkie rezultaty. Wszystkie informacje przekazywane są w prosty sposób. Nic nie jest pomijane. Po kursach będziesz potrafił realnie wcielić nowo poznane wiadomości w swoje życie.</p>
+							
+							<p>Jeżeli chcesz zakupić kurs to zapraszamy do <a href="#">Sklepu</a>.</p>
+							
+							<p>Zapraszamy serdecznie na <a href="#">forum</a>, czekamy na Twoje sugestie oraz pytania :)</p>
+							
+							<p>W razie jakichkolwiek pytań pisz śmiało na nasz <a href="mailto:aoczkowicz@gmail.com"> e-mail </a>, gg lub też <a href="#">forum</a>, postaramy się na nie odpowiedzieć w jak najkrótszym okresie czasu.</p>
+														
 						</div>
 					</div> <!-- koniec srodkowa czesc zawartosci-->
 					<div id="dolna_czesc_zawartosci"><a href="https://videokurs.pl">to ma byc </a> </div> <!-- dolna czesc, taki paseczek-->
 					
 				</div> <!-- koniec zawartosci-->
+				
+				<div id="dolna_czesc_strony"> <!-- poczatek dolna czesc strony -->
+					<img id="newsletter_icon" src="images/newsletter_icon.gif" alt="Newsletter Icon"/>
+					<div id="tekst_newsletter"><!-- poczatek tekst_newsletter -->
+						<div id="naglowek_newsletter"> Zapisz się do Newslettera i bądź na bieżąco z nowościami :-)</div>
+						<div id="form_newsletter">
+							<form action="mailto:aoczkowicz@gmail.com?subject=XXX" method="post">
+								<div>Twój e-mail:
+								<input class="input_text" type="text" name="email">
+								<input class="submit_button" type="submit" value="Zapisuję się"/>
+								</div> 
+							</form>
+						</div> 
+						<div id="newsletter_info">
+							Zaznacz, aby potwierdzić akceptację zasad prywatności poniżej.
+							*Szanujemy Ciebie i tak samo nie lubimy spamu jak Ty, będziemy informowali Cię tylko o samych nowościach związanych z <em>Video Kursami</em>. W każdym momencie, możesz wypisać się z Newsletera wysyłając do nas e-mail'a. Dla formalności przyciskając button "Zapisuje się*" akceptujesz nasze <a href="#"> zasady prywatności.</a>
+						</div>						
+												
+					</div> <!-- koniec tekst_newsletter -->
+					
+				</div> <!-- koniec dolna czesc strony -->
+				<div id="copyright"> <!--start copyright -->
+					&copy; 2007 - 2019, <strong>GEM</strong> created by <strong>Arkadiusz Włodarczyk</strong>
+				</div> <!-- koniec copyright-->
 				
 			</div> <!-- koniec container-->
 		</div> <!-- koniec centrowania containera -->
