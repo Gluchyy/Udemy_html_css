@@ -321,6 +321,35 @@
 			{
 				margin-bottom:5px; /*odsuniecie 5px miedzy kolejnymi elementami li */
 			}
+
+			#zawartosc .boczny_tekst
+			{
+				text-align: left; /*wyjustuj do lewej tekst w bloczku */
+				float: right; /*ma oplywac z prawej*/
+				width: 150px; /*trzeba mu nadac szerokosc bo inaczej to jest ta sama szerokosc co #zawartosc, wiec nie bedize float mogl dzialac bo nie opłynie.. */
+				margin: 10px 20px;
+				font-size: 10px;
+				font-family: Verdana;
+				border: 1px dotted gray;
+				padding:20px 15px;
+				background-image: url('images/tlo_boczne.jpg'); /*leciutka zmiana gradientu w tle tej ramki na TLE calej strony */
+			}
+			
+			#zawartosc .obrazki /*wyrzucenie obrazkow na prawo i pod ramke z bocznym tekstem */
+			{
+				float: right; /*przerzuci na prawą*/
+				clear: right; /*wyczysci wczesniejszy float dla tej ramki wyzej, dzieki temu obrazki beda pod ramka */
+			}
+			
+			#zawartosc .obrazki img /*chce obrazki dac gora dól bo sa obok siebie*/
+			{
+				float: right;
+				clear: right; /*wyczysci float dla pierwszego obrazka, dlatego ten obrazek drugi floatnie do prawej juz POD NIM */
+				margin: 30px 30px 0px 0px;
+				cursor: pointer;
+				opacity: 0.6;
+				filter: alpha(opacity=60); 
+			}
 			/*]]>*/
 		</style>
 	</head>
@@ -399,8 +428,19 @@
 					<div id="gorna_czesc_zawartosci"><!-- start gornej czesci zawartosci--></div> <!--koniec gornej czesci zawartosci-->
 					<div id="srodkowa_czesc_zawartosci">
 						
-						<div class="boczny tekst">
-							
+						<div class="boczny_tekst">
+							<p>Czy wiesz, że oglądanie <strong>Video Kursów</strong> jest jedną z najlepszych metod nauki?</p>
+							<p>Nie wierzysz?</p>
+							<p>W takim razie konieczenie przeczytaj <a href="#">ten artykuł</a>.</p>
+							<p>Możesz także <b>za darmo</b> oglądnąć <a href="#">przykładowe lekcje</a>. </p>
+						</div>
+						<div class="obrazki">
+							<img src="images/video-kurs-c.gif" alt="Video Kurs" title="video-kurs"
+							onmouseover="this.style.opacity=1; this.filters.alpha.opacity=100" 
+							onmouseout="this.style.opacity=0.6; this.filters.aplha.opacity=60"/>
+							<img src="images/video-kurs-xhtml-i-css.gif" alt="Video Kurs" title="video-kurs" 
+							onmouseover="this.style.opacity=1; this.filters.alpha.opacity=100" 
+							onmouseout="this.style.opacity=0.6; this.filters.aplha.opacity=60"/>
 						</div>
 						<div id="tekst"><!-- Div do przechowywania tresci na naszej stronie-->
 							<h1>Video Kursy - Strona Główna</h1>
@@ -416,7 +456,7 @@
 <p>Stworzyliśmy dla Ciebie wysokiej jakości:</p>
 <h3>Kursy Programowania:</h3>
 <ul>
-	<li><a href="#"> Video Kurs Programowania w C++ - Wydanie 2 - HIT</a></li>
+	<li><a href="#"> Video Kurs Programowania w C++ - Wydanie 2 - </a><b>HIT</b></li>
 	<li><a href="#"> Video Kurs Programowania w C++ - Obsługa Plików</a></li>
 	<li><a href="#"> Video Kurs Programowania w C++ - Algorytmy</a></li>
 	<li><a href="#"> Video Kurs C# 4.0 NET 4.0 - HIT</a></li>
@@ -427,7 +467,7 @@
 	<li><a href="#">  Video Kurs Java - Aspekty Zaawansowane</a></li>
 	<li><a href="#"> Video Kurs Programowania w języku Pascal (podstawy)</a></li>
 	<li><a href="#"> Selenium</a></li>
-	<li><a href="#"> Appium - Automatyzacja Testów Mobilnych - Nowość - HIT</a></li>
+	<li><a href="#"> Appium - Automatyzacja Testów Mobilnych - Nowość - </a><b>HIT</b></li>
 	<li><a href="#"> Auto IT</a></li>
 </ul>
 <h3>Kursy Tworzenia Stron WWW:</h3>
