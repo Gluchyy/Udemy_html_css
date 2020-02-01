@@ -321,6 +321,8 @@ h3
 
 #zawartosc .obrazki /*wyrzucenie obrazkow na prawo i pod ramke z bocznym tekstem */
 {
+	/*border: 1px solid black; */ /*DO TESTOW BORDERA NA IE*/
+	width: 300px; /*zabezpieczenie przed IE bo na IE moze potraktowac obrazki na cala szerokosc strony, w sensie bordera*/
 	float: right; /*przerzuci na prawą*/
 	clear: right; /*wyczysci wczesniejszy float dla tej ramki wyzej, dzieki temu obrazki beda pod ramka */
 }
