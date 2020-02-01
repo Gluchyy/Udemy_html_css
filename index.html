@@ -51,7 +51,7 @@
 			{
 				position:relative; /*do niego bedzie sie odnosilo to co jest w tym bloczku, u nas img.logo bedzie sie do niego odnosic, a nie do calej strony*/
 				background-image: url('images/gora_i_dol.gif');
-				width:944px; /*szerokosc i wysokosc obrazka*/
+				width:944px; /*szerokosc i wysokosc obrazka, 944px podobno dobrze wyglada na 1280 i 1024 px szerokosciach*/
 				height:113px;
 				margin-top: 10px;
 				
@@ -143,7 +143,7 @@
 				#srodkowe_menu li a
 			{
 				border-bottom: none; /*brak kropek na dole*/
-				color: white; /*kolor tekstu bialy*/
+				color: #CCCCCC; /*kolor tekstu na taki szarawy*/
 				font-size: 13px;
 				font-family: "Trebuchet MS", Helvetica, sans-serif;
 				font-weight: bold;
@@ -253,6 +253,74 @@
 			{
 				margin-top: 5px;
 			}
+			/*GŁÓWNA ZAWARTOŚĆ STRONY*/
+			#zawartosc
+			{
+				width:944px; /* bo obrazek gorna_czesc_zawartosci.gif ma 944px szerokosci*/
+			}
+			
+			#gorna_czesc_zawartosci
+			{
+				background-image: url('images/gorna_czesc_zawartosci.gif');
+				width: 944px;
+				height: 17px;
+			}
+			
+			#srodkowa_czesc_zawartosci
+			{
+				background-image: url('images/srodkowa_czesc_zawartosci.gif');
+				width: 944px; /*wysokosci nie okreslam bo chce aby ona sie powtarzala bo to jest poziomy pasek na 1px.. */
+				background-repeat: repeat-y; /*powtarzaj az do konca pojawiajacej sie zawartosci*/
+			}
+			
+			#dolna_czesc_zawartosci
+			{
+				background-image: url('images/dolna_czesc_zawartosci.gif');
+				width: 944px;
+				height: 31px;
+			}
+			
+			#tekst /*ustawienie tekstu na stronie */
+			{
+				text-align: justify;
+				padding: 10px 50px; /*wypelnienie gora/dol i po bokach*/
+				line-height: 140%; /*wysokosc jednej lini bez zmiany wielkosci czcionki - efekt wieksze odstepy miedzy wersami */
+				font-size: 12px;
+				font-family: "Trebuchet MS", Helvetica, sans-serif;
+			}
+			
+			h1
+			{
+				font-size: 18px;
+				text-align: center;
+				color: #0A3C73;
+				margin-bottom: 22px;
+				font-family: Calibri, Tahoma, Arial, Helvetica, sans-serif;
+				font-style: italic;
+			}
+			
+			p
+			{
+				margin-bottom: 15px; /*robienie odstepow pod akapitami, bo byly 1 pod drugim w glownej zawartosci*/
+			}
+			
+			h3
+			{
+				margin-bottom: 15px; /*robienie odstepow pod akapitami, bo byly 1 pod drugim w glownej zawartosci*/
+				color: #0A3C73;
+			}
+			
+			#tekst ul
+			{
+				margin: 20px; /*margines dookola listy*/
+				margin-left: 110px;
+				list-style-image: url('images/ol.gif');
+			}
+			
+			#tekst li
+			{
+				margin-bottom:5px; /*odsuniecie 5px miedzy kolejnymi elementami li */
+			}
 			/*]]>*/
 		</style>
 	</head>
@@ -327,6 +395,93 @@
 							
 					</ul>
 				</div><!-- koniec srodkowe_menu-->
+				<div id="zawartosc"> <!-- start zawartosci-->
+					<div id="gorna_czesc_zawartosci"><!-- start gornej czesci zawartosci--></div> <!--koniec gornej czesci zawartosci-->
+					<div id="srodkowa_czesc_zawartosci">
+						
+						<div class="boczny tekst">
+							
+						</div>
+						<div id="tekst"><!-- Div do przechowywania tresci na naszej stronie-->
+							<h1>Video Kursy - Strona Główna</h1>
+
+<p>Witam Cię serdecznie,</p>
+
+<p>Znajdujesz się na stronie <strong>Wydawnictwa GEM</strong>. Zajmujemy się tworzeniem i sprzedażą <strong>Video Kursów</strong>.</p>
+
+<p>Zapraszamy Cię do <a href="#">artykułu</a>, w którym dowiesz się czym są <a href="#">Video Kursy?</a></p>
+
+<p>Możesz za darmo oglądać przykładowe lekcje <a href="#">tutaj</a> lub też na naszym kanale <a href="#">YouTube</a>.</p>
+
+<p>Stworzyliśmy dla Ciebie wysokiej jakości:</p>
+<h3>Kursy Programowania:</h3>
+<ul>
+	<li><a href="#"> Video Kurs Programowania w C++ - Wydanie 2 - HIT</a></li>
+	<li><a href="#"> Video Kurs Programowania w C++ - Obsługa Plików</a></li>
+	<li><a href="#"> Video Kurs Programowania w C++ - Algorytmy</a></li>
+	<li><a href="#"> Video Kurs C# 4.0 NET 4.0 - HIT</a></li>
+	<li><a href="#"> Video Kurs C# Tworzenie Aplikacji - Nowość - HIT</a></li>
+	<li><a href="#"> Video Kurs Programowania w języku Java</a></li>
+	<li><a href="#"> Video Kurs Java - Tworzenie Aplikacji - HIT</a></li>
+	<li><a href="#"> Video Kurs Java - Strumienie</a></li>
+	<li><a href="#">  Video Kurs Java - Aspekty Zaawansowane</a></li>
+	<li><a href="#"> Video Kurs Programowania w języku Pascal (podstawy)</a></li>
+	<li><a href="#"> Selenium</a></li>
+	<li><a href="#"> Appium - Automatyzacja Testów Mobilnych - Nowość - HIT</a></li>
+	<li><a href="#"> Auto IT</a></li>
+</ul>
+<h3>Kursy Tworzenia Stron WWW:</h3>
+<ul>
+	<li><a href="#">Video Kurs Tworzenia Stron WWW w (X)HTML &amp; CSS</a></li>
+	<li><a href="#"> Video Kurs PHP 5.3 wydanie 2 - Nowość</a></li>
+	<li><a href="#">Video Kurs MySQL w PHP - PhPMyAdmin - wydanie 2 - HIT</a></li>
+	<li><a href="#"> Video Kurs Zaawansowane Aspekty MySQL + MySQLi</a></li>
+	<li><a href="#"> Video Kurs PDO</a></li>
+    <li><a href="#">Video Kurs Pozycjonowania Stron Internetowych (SEO) - HIT</a></li>
+    <li><a href="#">Video Kurs SMARTY</a></li>
+    <li><a href="#">Video Kurs Java Script, DHTML</a></li>
+    <li><a href="#">Video Kurs AJAX - Dynamiczne Tworzenie Stron WWW</a></li>
+    <li><a href="#">Video Kurs jQuery - biblioteka JavaScript</a></li>
+    <li><a href="#">Video Kurs HTML 5 - HIT!</a></li>
+    <li><a href="#">Video Kurs CSS 3 - Nowość! HIT!</a></li>
+    <li><a href="#">Video Kurs SASS</a></li>
+    <li><a href="#">Video Kurs Compass</a></li>
+    <li><a href="#">Video Kurs Grunt.js - Nowość!</a></li>
+    <li><a href="#">Video Kurs XML i DTD</a></li>
+</ul>
+<h3>Kursy Matematyczne:</h3>
+<ul>
+    <li><a href="#">Video Kurs Matematyki: Logika i Zbiory - promocja - 7 zł wersja (online)!</a></li>
+    <li><a href="#">Video Kurs Matematyki: Algebra Cz. 1</a></li>
+    <li><a href="#">Video Kurs Matematyki: Algebra Cz. 2</a></li>
+</ul>
+<h3>Kursy Office:</h3>
+<ul>
+    <li><a href="#">Access 2010</a></li>
+    <li><a href="#">Excel 2010</a></li>
+    <li><a href="#">Excel 2013</a></li>
+    <li><a href="#">Visio 2010</a></li>
+    <li><a href="#">PowerPoint 2010</a></li>
+    <li><a href="#">Word 2010</a></li>
+</ul>
+<h3>Inne:</h3>
+<ul>
+    <li><a href="#">Zarządzanie Projektami</a></li>
+    <li><a href="#">Kierowniczo-Managerski</a></li>
+</ul>
+<p>Autorem prawie wszystkich wyżej wymienionych kursów jest <strong>Arkadiusz Włodarczyk</strong> - młody człowiek, przez co język używany w kursach jest dla każdego bardzo przystępny. Każdy kurs jest stworzony z myślą o Tobie, tak abyś nie tracił swojego cennego czasu. Gwarantujemy Ci szybkie rezultaty. Wszystkie informacje przekazywane są w prosty sposób. Nic nie jest pomijane. Po kursach będziesz potrafił realnie wcielić nowo poznane wiadomości w swoje życie.</p>
+
+<p>Jeżeli chcesz zakupić kurs to zapraszamy do <a href="#">Sklepu</a>.</p>
+
+<p>Zapraszamy serdecznie na <a href="#">forum</a>, czekamy na Twoje sugestie oraz pytania :)</p>
+
+<p>W razie jakichkolwiek pytań pisz śmiało na nasz <a href="mailto:aoczkowicz@gmail.com"> e-mail </a>, gg lub też <a href="#">forum</a>, postaramy się na nie odpowiedzieć w jak najkrótszym okresie czasu.</p>
+							
+						</div>
+					</div> <!-- koniec srodkowa czesc zawartosci-->
+					<div id="dolna_czesc_zawartosci"><a href="https://videokurs.pl">to ma byc </a> </div> <!-- dolna czesc, taki paseczek-->
+					
+				</div> <!-- koniec zawartosci-->
 				
 			</div> <!-- koniec container-->
 		</div> <!-- koniec centrowania containera -->
@@ -335,4 +490,4 @@
 </html>
 
 
-
+	
